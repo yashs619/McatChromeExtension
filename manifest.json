@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "MCAT is Love MCAT is Life",
+  "version": "1.0.0",
+  "description": "MCAT Study Tool", 
+
+  "author": "Yash Shah",
+
+  "background": {
+      "scripts" : ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "css": [],
+      "js": ["jquery.min.js", "redirector.js"]
+    }
+  ],
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "identity",
+    "identity.email",
+    "webRequest"
+  ]
+}

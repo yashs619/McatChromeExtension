@@ -1,0 +1,20 @@
+{
+  "name": "mcatq",
+  "version": "1.0.0",
+  "description": "lord",
+  "main": "expressServer.js",
+  "scripts": {
+    "start" : "node expressServer.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "~1.0.0",
+    "request": "latest",
+    "cheerio": "latest",
+    "express" : "latest",
+    "mongodb" : "latest",
+    "body-parser" : "latest",
+    "cors" : "latest"
+  }
+}

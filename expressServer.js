@@ -1,5 +1,4 @@
 var MongoClient = require('mongodb').MongoClient;
-//var MONGO_URI = 'mongodb://heroku_qdh19b4l:8ui71cfkvv7lm6nnf48ipa8m3q@ds133428.mlab.com:33428/heroku_qdh19b4l';
 
 var config = require('./config');
 var  MONGO_URI = config.mongo.URI; 
@@ -215,45 +214,3 @@ var questionScraper = function (questionID, callback) {
     callback(questionObject);
   });
 }
-
-/*
-var getCorrectAnswerToQuestion = function (questionID, callback) {
-  var questionIDString = '' + questionID + '';
-  var groupChoices =["one", "two", "three", "four"];
-
-  for (var i = 0; i < 4; i++) {
-    var choice = groupChoices[i];
-    var correctFound = false;
-    console.log('on iteration' + choice)
-    var options = { 
-    method: 'POST',
-    url: 'http://www.mcatquestion.com/findquestion.php?arg1=' + questionID,
-    headers:{ 
-       'cache-control': 'no-cache',
-       'content-type': 'application/x-www-form-urlencoded' },
-    form: { 'group[]': choice, submit: 'Submit' } };
-    
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-      var $ = cheerio.load(body);
-      if (body.indexOf("Go to Correct Answer") === -1) {
-        var correctChoice;
-        if (choice === "one") {
-          correctChoice = $('#qadcontent form tr span').eq(2).text();
-        } else if ( choice === "two") {
-          correctChoice = $('#qadcontent form tr span').eq(4).text();
-        } else if (choice === "three") {
-          correctChoice = $('#qadcontent form tr span').eq(6).text();
-        }
-        else {
-          correctChoice = $('#qadcontent form tr span').eq(8).text();
-        }
-        correctFound = true;
-        callback(correctChoice);
-      }    
-    });
-    if (correctFound) {
-      i = 4;
-    }
-  }
-}*/

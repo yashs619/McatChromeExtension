@@ -1,2 +1,2 @@
 # McatChromeExtension
-This is a Chrome extension that "blocks" Facebook by prompting you with an MCAT question everytime you try to navigate to it. If you answer correctly, you get to use Facebook for a limited amount of time.
+This is a preliminary version of a Chrome extension that "blocks" Facebook by prompting you with an MCAT question everytime you try to navigate to it. If you answer correctly, you get to use Facebook for a limited amount of time. The chrome extension connects to a heroku app which in turn is connected to a MongoDB database. This database stores user information regarding the questions they've answered correctly, incorrectly, and questions they've seen before. 
